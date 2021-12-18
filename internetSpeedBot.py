@@ -1,4 +1,3 @@
-# import os
 import os
 import time
 from smtplib import *
