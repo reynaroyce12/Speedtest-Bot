@@ -11,6 +11,7 @@ load_dotenv()
 driver_path = os.getenv('DRIVER_PATH')
 my_email = os.getenv('MY_EMAIL')
 password = os.getenv('PASSWORD')
+receiver_mail = os.getenv('RECEIVER_MAIL')
 
 
 class InternetSpeed:
@@ -28,7 +29,7 @@ class InternetSpeed:
                 connection.starttls()
                 connection.login(user=my_email, password=password)
                 connection.sendmail(from_addr=my_email,
-                                    to_addrs="roycereyna12@gmail.com",
+                                    to_addrs=receiver_mail,
                                     msg=f"Subject:Customer Complaint 📝\n\n"
                                         f"Hello Internet Provider,Why is my internet "
                                         f"speed {current_down}Down/{current_up}Up when I pay for {self.down_speed}Down/"
